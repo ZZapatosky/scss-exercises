@@ -1,0 +1,85 @@
+
+//dodadete go bodyStyle.scss dokumentot
+@import "bodyStyleBeginning";
+
+
+
+//promenlivi:
+
+$font-first:Helvetica, sans-serif;
+$font-second:"Times New Roman", Times, serif;
+$height:280px;
+$background_color:#CCFFCC;
+$left:80px;
+$right:100px;
+$top:470px;
+$containerTwo:40%;
+$box_width:150px;
+$box_height:50px;
+$box_1:2px solid #FF0000;
+$box_2:2px solid#0000FF;
+$box_text:center;
+$box_top:60vh;
+$box_two_bottom:10px;
+
+
+.first{
+  //iskoristete promenliva za fontot
+font-family:$font-first;
+}
+
+.second{
+  //iskoristete promenliva za fontot
+  font-family:$font-second;
+}
+
+.containerOne{
+  height:$height ;
+  background-color:$background_color ;
+  //dodadete visina na container-ot
+  //dodadete boja za container-ot
+  .left{
+    //extend za position
+    position: absolute;
+    //definirajte prostor od levo i od gore za ovoj div
+    left:$left;
+    top:$top;
+  }
+
+  .right{
+    position: absolute;
+right:$right;
+top:$top;
+    //definirajte prostor od levo i od gore za ovoj div kako zbir od .left div-ot i dopolnitelnoto potrebno rastojanie od levo
+  }
+}
+
+.boxes{
+ 
+ 
+  //zaednicki karakteristiki
+}
+
+.containerTwo{
+  width:$box_width;
+  height:$box_height;
+
+  position: absolute;
+  margin-left:$containerTwo;
+  top:$box_top;
+  //definirajte ja pozicijata
+
+  .boxOne{
+    
+    text-align: $box_text;
+    border:$box_1;
+    //dodadete go veke definiraniot kod vo .boxes i soodvetno dopolnete go
+  }
+  .boxTwo{
+    border:$box_2;
+    margin-top:$box_two_bottom;
+    text-align: $box_text;
+    //dodadete go veke definiraniot kod vo .boxes i soodvetno dopolnete go
+  }
+
+}

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,IAAI,CAAC;EAEH,UAAU,EAAE,OAAO;CACpB;;AAED,AAAA,OAAO,CAAA;EACL,WAAW,EAAE,IAAI;EACjB,YAAY,EAAE,IAAI;EAClB,KAAK,EAAE,GAAG;CACX",
+    "sources": [
+        "bodyStyleBeginning.scss"
+    ],
+    "names": [],
+    "file": "bodyStyleBeginning.css"
+}

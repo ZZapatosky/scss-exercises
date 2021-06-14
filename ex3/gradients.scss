@@ -1,0 +1,95 @@
+
+@mixin stripes($colors, $direction: "to bottom") {  
+    
+    $stripes   : 100% / length($colors);
+    $auto      : not(type-of(nth($colors, 1)) == list);
+    $gradient  : ();
+    
+    @for $i from 1 through length($colors) {
+      $item : nth($colors, $i);
+      $dump : ();
+
+      @if $auto == true {
+        $dump : $item $stripes * ($i - 1), $item $stripes * $i;
+      }
+      
+      @else {
+                
+        @if $i > 1 {
+          $prev : nth($colors, $i - 1);
+          $dump : append($dump, nth($item, 1) nth($prev, 2));
+        }
+        $dump : append($dump, $item);
+        
+      }
+      
+      $gradient : join($gradient, $dump, comma);
+
+    }
+
+    background-image:(linear-gradient($direction, $gradient));
+}
+
+html, body {
+  height: 100%;
+}
+  
+body {
+  background: #33363b;
+  display: table;
+    width: 100%;
+  
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    border-top: 5em solid #25272a;
+    height: 1em;
+    $bp1:(#080808,#202020
+    ,#393939
+    ,#525252
+    ,#6a6a6a
+    ,#838383
+    ,#9c9c9c
+    ,#b4b4b4
+    ,#cdcdcd
+    ,#e6e6e6
+    ,#ffffff
+    );
+    @include stripes($bp1, to right);
+  }
+    
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-bottom: 5em solid #25272a;
+    height: 1em;
+    $bp2: (#ff0000,
+    #e50000
+    ,#cc0000
+    ,#b20000
+    ,#990000
+    ,#7f0000
+    ,#660000
+    ,#4c0000
+    ,#330000
+    ,#190000
+    ,#000000);
+    @include stripes($bp2, to right);
+  }
+}
+ 
+h1 {
+  display: table-cell;
+  text-align: center;
+  font-family: 'Days One', sans-serif;
+  vertical-align: middle;
+  color: white;
+  font-size: 5em;
+}
+  
